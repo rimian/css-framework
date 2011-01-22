@@ -1,0 +1,64 @@
+
+// for the container divs
+@mixin positioning($element) {
+  float: left;
+  @if $element == column {
+    width: $col_width;
+  }
+  @if $element == content {
+    width: $page_width - (2 * $col_width);
+  }
+}
+
+// apply default white space around things
+@mixin space($op: all) {
+  @if $op == all {
+    margin: $grid;
+    padding: $grid;
+  }
+  @if $op == ends {
+    margin-top: $grid;
+    margin-bottom: $grid;
+    padding-top: $grid;
+    padding-bottom: $grid;
+  }
+  @if $op == sides {
+    margin-left: $grid;
+    margin-right: $grid;
+    padding-left: $grid;
+    padding-right: $grid;
+  }
+}
+
+// color something 
+@mixin coloring($mode: normal) {
+  @if $mode == reverse {
+    background: $hex_fg;
+    color: $hex_bg;
+  }
+  @else {
+    background: $hex_bg;
+    color: $hex_fg;
+  }
+}
+
+@mixin corners{
+  @if $corners > 0 {
+    -moz-border-radius: $corners;
+    border-radius: $corners;
+    @include bordering;
+  }
+}
+
+@mixin bordering {
+  border: 1px $hex_low solid;
+}
+
+// 
+@mixin debug{
+  border: 1px black solid;
+}
+
+
+
+

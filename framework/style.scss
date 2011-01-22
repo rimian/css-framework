@@ -1,0 +1,110 @@
+
+$grid: 10px;
+
+$page_width: $grid * 120;
+$col_width: $grid * 20;
+
+$hex_bg: #efefef;
+$hex_fg: #111;
+$hex_content: white;
+$hex_low: darken($hex_bg, 30%);
+
+$corners: $grid * .8;
+$small: $grid * 0.9;
+
+@import 'components.scss';
+
+body {
+  
+  @include coloring();
+  
+  font-family: sans-serif;
+  font-size: $grid * 1.6;
+  line-height: 140%;
+  
+  a {
+    color: $hex_fg;
+  }
+  
+  #container {
+    
+    width: $page_width;
+    margin: 0 auto;
+    
+    h2 {
+      margin-top: $grid;
+      font-size: $grid * 2.2;
+    }
+    
+    header {
+      
+      @include corners();
+      @include space(sides);
+      
+      height: $grid * 13;
+      background-color: $hex_content;
+      text-align: center;
+      font-size: 125%;
+      font-weight: bold;
+      
+      div {
+        @include space(ends);
+      }
+      
+    }
+    
+    aside {
+      
+      @include positioning(column);
+      
+      div.content {
+        
+        background-color: $hex_content;
+        
+        @include corners();
+        @include space(all);
+        
+        nav {
+          a {
+            display: block;
+          }
+        }
+        
+        img {
+          //not done yet
+          @include space(ends);
+          @include bordering();
+        }
+      }
+    }
+
+    #content {
+      
+      @include positioning(content);
+      
+      div.content {
+        
+        background-color: $hex_content;
+        
+        @include corners();
+        @include space(all);
+      
+      }
+    }
+
+  }
+  
+  footer {
+    @include space(ends);
+    clear: left;
+    text-align: center;
+    font-size: $small;
+    color: $hex_low;
+    width: 100%;
+  }
+  
+}
+
+
+
+
