@@ -69,12 +69,6 @@ body {
             display: block;
           }
         }
-        
-        img {
-          //not done yet
-          @include space(ends);
-          @include bordering();
-        }
       }
     }
 
