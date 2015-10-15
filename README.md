@@ -1,7 +1,7 @@
 CSS Framework
 ===========================
 
-Authored my @rimian under GPL. Enjoy!
+Authored by [@rimian](http://twitter.com/rimian) under GPL. Enjoy!
 
 This is a basic 3 column framework built on sass. It's purpose is to reduce
 the technical cost of CSS by removing the imposed duplication. 
